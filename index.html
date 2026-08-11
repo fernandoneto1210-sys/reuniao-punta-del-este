@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maratona de Punta del Este 2026 | Oficina de Turismo</title>
+
+<!-- Google Fonts para tipografia moderna e profissional -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --verde: #2e7d32;
+    --verde-hover: #1b5e20;
+    --verde-suave: #e8f5e9;
+    --azul: #0d47a1;
+    --azul-medio: #1565c0;
+    --azul-claro: #e3f2fd;
+    --vermelho: #c62828;
+    --vermelho-hover: #b71c1c;
+    --vermelho-suave: #fdecea;
+    --cinza-bg: #f8fafc;
+    --cinza-card: #ffffff;
+    --cinza-escuro: #1e293b;
+    --cinza-texto: #475569;
+    --dourado: #d4a017;
+    --dourado-suave: #fef9c3;
+    --sombra-card: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+    --sombra-hover: 0 20px 35px -5px rgba(15, 23, 42, 0.12), 0 8px 16px -2px rgba(15, 23, 42, 0.08);
+    --radius: 16px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--cinza-bg);
+    color: var(--cinza-escuro);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* BANNER / HERO */
+  .hero {
+    position: relative;
+    min-height: 620px;
+    background:
+      linear-gradient(180deg, rgba(13, 71, 161, 0.45) 0%, rgba(15, 23, 42, 0.88) 100%),
+      url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 60px 20px 50px;
+  }
+
+  .hero .logo {
+    height: 90px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 18px;
+    padding: 10px 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease;
+  }
+  .hero .logo:hover { transform: scale(1.03); }
+
+  .hero .tag-motivacional {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(212, 160, 23, 0.25);
+    border: 1px solid rgba(212, 160, 23, 0.6);
+    color: #fef08a;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 0.9em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+    backdrop-filter: blur(4px);
+  }
+
+  .hero h1 {
+    font-size: 3.2em;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.6);
+    letter-spacing: -0.5px;
+    max-width: 900px;
+  }
+
+  .hero p.subtitulo {
+    font-size: 1.25em;
+    opacity: 0.95;
+    max-width: 720px;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    font-weight: 400;
+  }
+
+  .hero .datas-chip {
+    display: inline-flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 16px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1em;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+
+  .hero .datas-chip span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .hero .scroll-hint {
+    margin-top: 40px;
+    font-size: 0.9em;
+    opacity: 0.9;
+    font-weight: 500;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  /* NAVEGAÇÃO */
+  nav {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  nav a {
+    text-decoration: none;
+    color: var(--cinza-texto);
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 25px;
+    transition: all 0.25s ease;
+    font-size: 0.88em;
+  }
+
+  nav a:hover, nav a.active {
+    background: var(--azul);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(13, 71, 161, 0.25);
+  }
+
+  /* ESTRUTURA GERAL */
+  section {
+    max-width: 1140px;
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  h2 {
+    color: var(--azul);
+    font-size: 2em;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--verde), var(--azul-medio));
+    border-radius: 4px;
+  }
+
+  .section-subtitle {
+    color: var(--cinza-texto);
+    font-size: 1.02em;
+    margin-top: 6px;
+  }
+
+  .card {
+    background: var(--cinza-card);
+    border-radius: var(--radius);
+    box-shadow: var(--sombra-card);
+    padding: 28px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .card:hover {
+    box-shadow: var(--sombra-hover);
+  }
+
+  /* ALERTAS E DESTAQUES */
+  .alert-box {
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    font-size: 1em;
+  }
+
+  .alert-box .alert-icon { font-size: 1.8em; line-height: 1; flex-shrink: 0; }
+
+  .alert-box.alert-red {
+    background: var(--vermelho-suave);
+    border: 2px solid var(--vermelho);
+    border-left: 6px solid var(--vermelho);
+    color: #7f1d1d;
+  }
+
+  .alert-box.alert-blue {
+    background: var(--azul-claro);
+    border: 2px solid var(--azul-medio);
+    border-left: 6px solid var(--azul-medio);
+    color: #0c4a6e;
+  }
+
+  .alert-box h4 { font-weight: 800; margin-bottom: 6px; font-size: 1.1em; }
+  .alert-box p { font-size: 0.97em; }
+
+  /* TIMELINE DO ROTEIRO */
+  .timeline {
+    position: relative;
+    padding-left: 32px;
+    border-left: 3px solid #cbd5e1;
+    margin-left: 10px;
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 32px;
+  }
+
+  .timeline-item:last-child { margin-bottom: 0; }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 4px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    border: 4px solid var(--azul-medio);
+    box-shadow: 0 0 0 4px var(--azul-claro);
+    transition: all 0.3s;
+  }
+
+  .timeline-item.destaque::before {
+    background: var(--vermelho);
+    border-color: #fff;
+    box-shadow: 0 0 0 4px rgba(198, 40, 40, 0.25);
+    width: 22px;
+    height: 22px;
+    left: -42px;
+  }
+
+  .timeline-date {
+    font-weight: 800;
+    color: var(--azul);
+    font-size: 1.1em;
+    display: inline-block;
+    margin-bottom: 6px;
+  }
+
+  .timeline-item.destaque .timeline-date {
+    color: var(--vermelho);
+    font-size: 1.25em;
+  }
+
+  .timeline-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+    border: 1px solid #e2e8f0;
+  }
+
+  .timeline-item.destaque .timeline-content {
+    background: linear-gradient(135deg, #ffffff 0%, #fff5f5 100%);
+    border-left: 5px solid var(--vermelho);
+  }
+
+  /* VOOS */
+  .voo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .voo-card {
+    border-left: 5px solid var(--verde);
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+  }
+
+  .voo-card h3 {
+    color: var(--verde);
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .voo-card p {
+    margin: 6px 0;
+    font-size: 0.98em;
+    color: var(--cinza-escuro);
+  }
+
+  .van-alert {
+    margin-top: 20px;
+    background: var(--dourado-suave);
+    border-left: 5px solid var(--dourado);
+    padding: 18px;
+    border-radius: 12px;
+    font-size: 0.98em;
+    color: #713f12;
+  }
+
+  /* HOTEL */
+  .hotel-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .hotel-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .hotel-grid img:hover { transform: scale(1.02); }
+
+  .hotel-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .badge {
+    background: var(--verde-suave);
+    color: var(--verde-hover);
+    border: 1px solid rgba(46, 125, 50, 0.2);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 0.9em;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* INCLUSOS */
+  .inclusos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+
+  .inclusos-grid div {
+    background: #fff;
+    padding: 18px;
+    border-radius: 12px;
+    border-left: 4px solid var(--verde);
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-top: 1px solid #f1f5f9;
+    border-right: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1em;
+  }
+
+  /* DOCUMENTOS E ATESTADO */
+  .docs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .docs-card {
+    border-radius: 16px;
+    padding: 26px;
+    box-shadow: var(--sombra-card);
+    border: 2px solid;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .docs-card.urgente {
+    background: linear-gradient(150deg, #fef2f2 0%, #fee2e2 100%);
+    border-color: var(--vermelho);
+  }
+
+  .docs-card.viagem {
+    background: linear-gradient(150deg, #eff6ff 0%, #dbeafe 100%);
+    border-color: var(--azul-medio);
+  }
+
+  .docs-card .corner-tag {
+    position: absolute;
+    top: 16px;
+    right: -38px;
+    transform: rotate(45deg);
+    padding: 6px 40px;
+    font-size: 0.68em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  .docs-card.urgente .corner-tag { background: var(--vermelho); }
+  .docs-card.viagem .corner-tag { background: var(--azul-medio); }
+
+  .docs-card .docs-icon { font-size: 2.6em; margin-bottom: 10px; }
+  .docs-card h3 { font-size: 1.3em; font-weight: 800; margin-bottom: 12px; }
+  .docs-card.urgente h3 { color: var(--vermelho); }
+  .docs-card.viagem h3 { color: var(--azul); }
+
+  .docs-card p, .docs-card li { font-size: 0.98em; }
+  .docs-card ul { padding-left: 20px; margin-top: 8px; }
+  .docs-card ul li { margin-bottom: 8px; }
+
+  .docs-alert-bottom {
+    margin-top: 18px;
+    background: #1e293b;
+    color: #fff;
+    padding: 18px 22px;
+    border-radius: 12px;
+    border-left: 6px solid var(--dourado);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1em;
+  }
+
+  .docs-alert-bottom .alert-icon { font-size: 1.6em; }
+
+  /* PROVA E LARGADAS */
+  .largadas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .largada-card {
+    text-align: center;
+    background: linear-gradient(135deg, var(--vermelho), #8e1717);
+    color: #fff;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 6px 18px rgba(198, 40, 40, 0.25);
+    transition: transform 0.25s ease;
+  }
+
+  .largada-card:hover { transform: translateY(-4px); }
+
+  .largada-card .km { font-size: 1.5em; font-weight: 800; }
+  .largada-card .hora { font-size: 1.8em; margin-top: 6px; font-weight: 800; opacity: 0.95; }
+
+  /* ALTIMETRIA CHART */
+  .chart-container {
+    position: relative;
+    width: 100%;
+    overflow-x: auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px;
+  }
+
+  svg#altimetriaChart {
+    min-width: 900px;
+    width: 100%;
+    height: 320px;
+  }
+
+  .legenda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 18px;
+    font-size: 0.92em;
+    padding: 12px 16px;
+    background: #f8fafc;
+    border-radius: 10px;
+  }
+
+  .legenda span { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+  .dot { width: 14px; height: 14px; border-radius: 50%; display: inline-block; }
+
+  /* SEÇÕES DA PROVA */
+  .secoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+  }
+
+  .secao-card {
+    background: #f8fafc;
+    border-radius: 14px;
+    padding: 20px;
+    border-top: 5px solid var(--azul-medio);
+    border-left: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .secao-card h4 { color: var(--azul); margin-bottom: 12px; font-size: 1.1em; font-weight: 700; }
+  .secao-card ul { padding-left: 18px; font-size: 0.95em; color: var(--cinza-texto); }
+  .secao-card ul li { margin-bottom: 8px; }
+
+  .tag-facil { color: var(--verde); font-weight: 700; }
+  .tag-dificil { color: var(--vermelho); font-weight: 700; }
+
+  /* PONTOS CHAVE */
+  .pontos-chave {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .pontos-box { padding: 22px; border-radius: 14px; }
+  .pontos-box.dificeis { background: var(--vermelho-suave); border-left: 5px solid var(--vermelho); }
+  .pontos-box.faceis { background: var(--verde-suave); border-left: 5px solid var(--verde); }
+  .pontos-box h4 { margin-bottom: 12px; font-size: 1.1em; font-weight: 700; }
+  .pontos-box ul { padding-left: 20px; font-size: 0.95em; }
+  .pontos-box li { margin-bottom: 8px; }
+
+  /* CLIMA & TEMPERATURA */
+  .weather-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .weather-day-card {
+    background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: center;
+    transition: transform 0.25s ease;
+  }
+
+  .weather-day-card:hover { transform: translateY(-4px); }
+  .weather-day-card.race-day {
+    background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%);
+    border: 2px solid var(--azul-medio);
+    box-shadow: 0 4px 16px rgba(21, 101, 192, 0.15);
+  }
+
+  .weather-day-card .day-title { font-weight: 800; color: var(--azul); font-size: 1em; margin-bottom: 6px; }
+  .weather-day-card .icon { font-size: 2.2em; margin: 8px 0; }
+  .weather-day-card .temp { font-size: 1.3em; font-weight: 800; color: var(--cinza-escuro); }
+  .weather-day-card .temp-range { font-size: 0.85em; color: var(--cinza-texto); margin-top: 4px; }
+  .weather-day-card .desc { font-size: 0.82em; color: var(--azul-medio); font-weight: 600; margin-top: 8px; }
+
+  .weather-highlight-box {
+    margin-top: 20px;
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    border-left: 5px solid var(--azul-medio);
+    padding: 20px;
+    border-radius: 12px;
+    color: #0369a1;
+  }
+
+  .weather-highlight-box h4 { font-weight: 800; margin-bottom: 6px; font-size: 1.05em; }
+
+  /* CONVERSÃO DE MOEDA */
+  .currency-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .converter-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 24px;
+    border-radius: 14px;
+  }
+
+  .converter-form { display: flex; flex-direction: column; gap: 16px; margin-top: 16px; }
+  .input-group { display: flex; flex-direction: column; gap: 6px; }
+  .input-group label { font-size: 0.88em; font-weight: 700; color: var(--cinza-texto); }
+
+  .input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 0 14px;
+    transition: border-color 0.2s;
+  }
+
+  .input-wrapper:focus-within { border-color: var(--verde); }
+  .input-wrapper span { font-weight: 800; color: var(--cinza-texto); margin-right: 8px; }
+
+  .input-wrapper input {
+    border: none;
+    outline: none;
+    padding: 12px 0;
+    font-size: 1.1em;
+    font-weight: 700;
+    width: 100%;
+    color: var(--cinza-escuro);
+    font-family: inherit;
+  }
+
+  .currency-rate-badge {
+    background: var(--verde-suave);
+    color: var(--verde-hover);
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.92em;
+    text-align: center;
+    border: 1px dashed var(--verde);
+  }
+
+  .quick-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.95em;
+  }
+
+  .quick-table th, .quick-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .quick-table th { background: #f1f5f9; color: var(--azul); font-weight: 700; }
+
+  /* FUSO HORÁRIO */
+  .fuso-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+    border: 1px solid #bfdbfe;
+    padding: 24px;
+    border-radius: 14px;
+  }
+
+  .fuso-icon {
+    font-size: 3.2em;
+    background: #fff;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    flex-shrink: 0;
+  }
+
+  /* PREÇOS & GASTRONOMIA */
+  .prices-table-container {
+    overflow-x: auto;
+  }
+
+  .prices-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 0.95em;
+  }
+
+  .prices-table th {
+    background: var(--azul);
+    color: #fff;
+    padding: 14px;
+    text-align: left;
+  }
+
+  .prices-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .prices-table tr:nth-child(even) { background: #f8fafc; }
+  .prices-table tr:hover { background: #f1f5f9; }
+
+  /* DICAS */
+  .dicas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .dica-card {
+    background: #fff;
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-top: 5px solid var(--dourado);
+    border-left: 1px solid #f1f5f9;
+    border-right: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .dica-card h4 { color: var(--dourado); margin-bottom: 10px; font-size: 1.1em; font-weight: 700; }
+  .dica-card p { font-size: 0.95em; color: var(--cinza-texto); }
+
+  /* TRANSPORTE */
+  .transporte-card {
+    background: linear-gradient(135deg, #fef9c3 0%, #fef08a 100%);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    border: 2px solid var(--dourado);
+    box-shadow: 0 8px 24px rgba(212, 160, 23, 0.2);
+  }
+
+  .transporte-card .valor {
+    font-size: 2.8em;
+    font-weight: 800;
+    color: var(--vermelho);
+    margin: 12px 0;
+    letter-spacing: -1px;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 45px 20px;
+    background: var(--cinza-escuro);
+    color: #94a3b8;
+    font-size: 0.95em;
+    margin-top: 60px;
+    border-top: 4px solid var(--verde);
+  }
+
+  footer img {
+    height: 60px;
+    margin-bottom: 16px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 8px 16px;
+  }
+
+  footer p { margin-bottom: 6px; }
+  footer p.brand { color: #fff; font-weight: 700; font-size: 1.1em; }
+
+  /* RESPONSIVIDADE */
+  @media(max-width: 868px) {
+    .currency-container { grid-template-columns: 1fr; }
+    .fuso-card { flex-direction: column; text-align: center; }
+    .docs-grid { grid-template-columns: 1fr; }
+  }
+
+  @media(max-width: 768px) {
+    .voo-grid { grid-template-columns: 1fr; }
+    .hotel-grid { grid-template-columns: 1fr; }
+    .pontos-chave { grid-template-columns: 1fr; }
+    .hero { min-height: 480px; padding: 40px 16px; }
+    .hero h1 { font-size: 2.1em; }
+    .hero p.subtitulo { font-size: 1.05em; }
+    .hero .datas-chip { gap: 10px; padding: 12px 20px; font-size: 0.88em; }
+    nav a { font-size: 0.82em; padding: 6px 12px; }
+    h2 { font-size: 1.6em; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO HEADER -->
+<div class="hero">
+  <img src="Logo_fundo_transparente.png" alt="Oficina de Turismo" class="logo">
+  <div class="tag-motivacional">🏃‍♂️ Sua jornada rumo à Maratona de Punta Del Este começa aqui</div>
+  <h1>Maratona de Punta del Este 2026</h1>
+  <p class="subtitulo">A combinação perfeita entre desafio esportivo, cenários deslumbrantes à beira-mar e uma experiência inesquecível na charmosa costa uruguaia.</p>
+  <div class="datas-chip">
+    <span>📅 04 a 08 de Setembro</span>
+    <span>📍 Punta del Este, Uruguai</span>
+    <span>🏁 42k · 21k · 10k · 5k</span>
+  </div>
+  <div class="scroll-hint">↓ Role para explorar todos os detalhes do seu pacote ↓</div>
+</div>
+
+<!-- NAVEGAÇÃO RÁPIDA -->
+<nav>
+  <a href="#roteiro">Roteiro</a>
+  <a href="#voos">Voos</a>
+  <a href="#hotel">Hospedagem</a>
+  <a href="#inclusos">Inclusos</a>
+  <a href="#documentos">Documentos</a>
+  <a href="#prova">A Prova</a>
+  <a href="#altimetria">Altimetria</a>
+  <a href="#clima">Clima</a>
+  <a href="#moeda">Moeda & Câmbio</a>
+  <a href="#fuso">Fuso Horário</a>
+  <a href="#precos">Preços & Gastronomia</a>
+  <a href="#dicas">Dicas</a>
+  <a href="#van">Transporte SP</a>
+</nav>
+
+<!-- ROTEIRO DIA A DIA -->
+<section id="roteiro">
+  <div class="section-header">
+    <h2>📅 Roteiro Completo Dia a Dia</h2>
+    <p class="section-subtitle">Cada momento planejado com precisão e conforto do início ao fim.</p>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item">
+      <div class="timeline-date">03/09 (Quinta-feira) — Embarque Rumo ao Desafio</div>
+      <div class="timeline-content">
+        <strong>Saída em Van de São Lourenço por volta das 23:00 hs</strong> em direção ao Aeroporto Internacional de Guarulhos (GRU), garantindo folga e tranquilidade para o embarque internacional.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">04/09 (Sexta-feira) — Chegada ao Uruguai</div>
+      <div class="timeline-content">
+        Embarque no voo <strong>GOL G3 7630 (09:30 → 12:15)</strong> rumo à Montevidéo. Chegada e transfer exclusivo até Punta del Este. Acomodação no hotel. À tarde, sugestão de visita à Expo da prova para retirada do kit do corredor. <strong style="color:var(--vermelho);">(Não esqueça do atestado médico!)</strong>
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">05/09 (Sábado) — City Tour & Casapueblo</div>
+      <div class="timeline-content">
+        Após o café da manhã, inesquecível <strong>City Tour por Punta del Este</strong>, visitando o monumento <em>"Los Dedos"</em> e a emblemática <strong>Casapueblo</strong> (ingresso incluso). Tarde livre para descanso estratégico e preparação mental.
+      </div>
+    </div>
+
+    <div class="timeline-item destaque">
+      <div class="timeline-date">🏁 06/09 (Domingo) — DIA DA MARATONA DE PUNTA DEL ESTE</div>
+      <div class="timeline-content">
+        <strong style="color:var(--vermelho); font-size:1.1em;">O Grande Dia da Sua Conquista!</strong><br>
+        Sugerimos saída do hotel em direção ao pórtico de largada por volta das 07:00h (sugerimos ir caminhando ou via aplicativo, ficando a criterio de cada atleta). Supere seus limites ao som das ondas do oceano e cruze a linha de chegada com a medalha no peito! Tarde para celebração e descanso.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">07/09 (Segunda-feira) — Celebração e Lazer Livre</div>
+      <div class="timeline-content">
+        Café da manhã . Dia livre para desfrutar a cidade no seu ritmo. Sugestões: visita histórica a Colônia do Sacramento, tour de degustação em vinícolas locais, ou passeios gastronômicos pela Marina de Punta del Este.
+      </div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-date">08/09 (Terça-feira) — Retorno Vitorioso para Casa</div>
+      <div class="timeline-content">
+        Café da manhã. Traslado privativo de regresso até o Aeroporto de Montevidéo para embarque no voo <strong>GOL G3 7631 (13:05 → 15:35)</strong> até São Paulo (GRU), trazendo recordações inesquecíveis e uma medalha histórica.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- VOOS -->
+<section id="voos">
+  <div class="section-header">
+    <h2>✈️ Detalhes dos Voos Confirmados</h2>
+    <p class="section-subtitle">Voos diretos GOL Linhas Aéreas com franquia de bagagem despachada inclusa.</p>
+  </div>
+
+  <div class="card">
+    <div class="voo-grid">
+      <div class="voo-card">
+        <h3>🛫 Voo de Ida — 04/Setembro</h3>
+        <p><strong>Companhia:</strong> GOL Linhas Aéreas · Voo <strong>G3 7630</strong></p>
+        <p><strong>Partida:</strong> São Paulo / Guarulhos (GRU) às <strong>09:30</strong></p>
+        <p><strong>Chegada:</strong> Montevidéo (MVD) às <strong>12:15</strong></p>
+        <p style="color:var(--verde); font-weight:700;">✅ Bagagem de mão (10kg) + Bagagem despachada (23kg) inclusa</p>
+      </div>
+
+      <div class="voo-card">
+        <h3>🛬 Voo de Volta — 08/Setembro</h3>
+        <p><strong>Companhia:</strong> GOL Linhas Aéreas · Voo <strong>G3 7631</strong></p>
+        <p><strong>Partida:</strong> Montevidéo (MVD) às <strong>13:05</strong></p>
+        <p><strong>Chegada:</strong> São Paulo / Guarulhos (GRU) às <strong>15:35</strong></p>
+        <p style="color:var(--verde); font-weight:700;">✅ Bagagem de mão (10kg) + Bagagem despachada (23kg) inclusa</p>
+      </div>
+    </div>
+
+    <div class="van-alert">
+      <strong>🚐 Conexão Terrestre Exclusiva:</strong> Na chegada em Montevidéo, traslado direto até o hotel em Punta del Este (e vice-versa no retorno), garantindo conforto e praticidade total aos atletas e acompanhantes.
+    </div>
+  </div>
+</section>
+
+<!-- HOTEL -->
+<section id="hotel">
+  <div class="section-header">
+    <h2>🏨 Sua Hospedagem — 2122 Hotel Art & Design</h2>
+    <p class="section-subtitle">Conforto , estrutura perfeita para recuperação do atleta e excelente localização.</p>
+  </div>
+
+  <div class="card">
+    <div class="hotel-grid">
+      <img src="fachada_2.jpg" alt="Fachada do 2122 Hotel Art & Design">
+      <img src="fachada_3.jpg" alt="Estrutura do Hotel Art & Design">
+      <img src="fachada_4.jpg" alt="Acomodações do 2122 Hotel">
+    </div>
+
+    <p style="font-size:1.05em; color:var(--cinza-escuro); margin-bottom:16px;">
+      O <strong>2122 Hotel Art & Design</strong> é um aparthotel localizado no coração do charmoso bairro Design District em Punta del Este, a poucos passos do Punta Shopping e perto das icônicas praias Mansa e Brava. Oferece suítes amplas, climatizadas , além de ambientes relaxantes com piscina aquecida e spa.
+    </p>
+
+    <div class="hotel-info">
+      <span class="badge">🍳 Café da Manhã Completo Incluso</span>
+      <span class="badge">🏊 Piscina Aquecida Interna</span>
+      <span class="badge">💪 Academia Equipada</span>
+      <span class="badge">📍 Localização Estratégica (Mansa & Brava)</span>
+      </div>
+  </div>
+</section>
+
+<!-- INCLUSOS -->
+<section id="inclusos">
+  <div class="section-header">
+    <h2>✅ O Que Está Incluso no Seu Pacote</h2>
+    <p class="section-subtitle">Tudo pensado para que você foque exclusivamente em dar o seu melhor na corrida.</p>
+  </div>
+
+  <div class="card">
+    <div class="inclusos-grid">
+      <div>✈️ Passagem aérea ida e volta com bagagem despachada</div>
+      <div>🏨 4 noites de hospedagem no 2122 Hotel Art & Design</div>
+      <div>🍳 Café da manhã diário incluso no hotel</div>
+      <div>🚐 Traslados executivos de chegada e saída (MVD ↔ Punta)</div>
+      <div>🛡️ Seguro viagem internacional com cobertura esportiva</div>
+      <div>🗺️ Tour guiado por Punta del Este com ingresso Casapueblo</div>
+      <div>🏃 Suporte e acompanhamento especializado da Oficina de Turismo</div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCUMENTOS OBRIGATÓRIOS E ATESTADO MÉDICO -->
+<section id="documentos">
+  <div class="section-header">
+    <h2>🪪 Documentos Obrigatórios & Atestado Médico</h2>
+    <p class="section-subtitle">Confira atentamente. A falta de qualquer um destes itens impede a retirada do kit ou o embarque.</p>
+  </div>
+
+  <div class="alert-box alert-red">
+    <div class="alert-icon">🚨</div>
+    <div>
+      <h4>ATENÇÃO MÁXIMA — ATESTADO MÉDICO É OBRIGATÓRIO!</h4>
+      <p>A organização da <strong>Maratona de Punta del Este exige obrigatoriamente a apresentação de um atestado médico original, datado recentemente (emitido até 1 ano antes da prova)</strong>. Sem exceção, o corredor que não apresentar o documento no momento da retirada do kit <strong>NÃO poderá participar de nenhuma das distâncias</strong> (42k, 21k, 10k ou 5k). O atestado deve conter nome completo, data e a liberação específica para corrida de rua.</p>
+    </div>
+  </div>
+
+  <div class="docs-grid">
+    <!-- Card Atestado -->
+    <div class="docs-card urgente">
+      <div class="corner-tag">NADA FUNCIONA SEM ESTE</div>
+      <div class="docs-icon">🩺</div>
+      <h3>Atestado Médico Específico para Corrida</h3>
+      <p><strong>Este documento é imprescindível para:</strong></p>
+      <ul>
+        <li><strong>Retirada do Kit do Atleta</strong> — sem ele, você não recebe número de peito, chip e camiseta.</li>
+        <li><strong>Participação na Prova</strong> — não é permitido correr sem o atestado, independentemente de qualquer outro documento.</li>
+        <li><strong>Cumprimento do regulamento</strong> — a organização checa o documento de todos os participantes.</li>
+      </ul>
+      <p style="margin-top:12px; font-weight:700; color:var(--vermelho);">
+        ⚠️ Se você já tem um atestado recente, ótimo! Se não, agende sua avaliação médica o quanto antes e leve o documento original na viagem.
+      </p>
+    </div>
+
+    <!-- Card Documentação de Viagem -->
+    <div class="docs-card viagem">
+      <div class="corner-tag">IMPRESCINDÍVEL</div>
+      <div class="docs-icon">🛂</div>
+      <h3>Documentação de Viagem para o Uruguai</h3>
+      <p><strong>Opções válidas para embarque (aceitas pelas companhias aéreas e autoridades migratórias):</strong></p>
+      <ul>
+        <li><strong>🛂 Passaporte Brasileiro:</strong> validade mínima de <strong>6 meses</strong> após a data do embarque (04/09/2026) — isto é, válido até pelo menos <strong>04/2027</strong>.</li>
+        <li><strong>🪪 Cédula de Identidade (RG) original:</strong> emitido há <strong>menos de 10 anos</strong>, em perfeito estado de conservação, sem rasuras ou danos que dificultem a leitura.</li>
+      </ul>
+      <div class="docs-alert-bottom" style="margin-top:16px; background:var(--azul);">
+        <span class="alert-icon">📵</span>
+        <span>Documentos digitais (foto no celular, RG Digital no app, PDF por e-mail) <strong>NÃO são aceitos</strong> no check-in da companhia aérea, nem nos órgãos de controle migratório uruguaio.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="docs-alert-bottom">
+    <span class="alert-icon">🗂️</span>
+    <span>Coloque a documentação em uma pasta ou carteira de fácil acesso e leve-a consigo na bagagem de mão durante o voo. Recomendamos levar também uma <strong>cópia impressa de todos os documentos em caso de eventual extravio do original</strong> no hotel.</span>
+  </div>
+</section>
+
+<!-- A PROVA -->
+<section id="prova">
+  <div class="section-header">
+    <h2>🏁 A Prova — Maratona de Punta del Este 2026</h2>
+    <p class="section-subtitle">Uma das provas mais charmosas e bem estruturadas da América do Sul.</p>
+  </div>
+
+  <div class="alert-box alert-red">
+    <div class="alert-icon">🩺</div>
+    <div>
+      <h4>Lembrete Crítico para o Dia de Retirada do Kit (04/SET)</h4>
+      <p>Leve seu <strong>atestado médico original</strong> e seus <strong>documentos de viagem físicos</strong> no momento da retirada do kit. A organização irá conferir rigorosamente.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--vermelho); margin-bottom:16px; font-weight:800;">Horários Oficiais de Largada</h3>
+    <div class="largadas">
+      <div class="largada-card">
+        <div class="km">42K — Maratona</div>
+        <div class="hora">08:00h</div>
+      </div>
+      <div class="largada-card">
+        <div class="km">21K — Meia</div>
+        <div class="hora">08:15h</div>
+      </div>
+      <div class="largada-card">
+        <div class="km">10K</div>
+        <div class="hora">08:15h</div>
+      </div>
+      <div class="largada-card">
+        <div class="km">5K</div>
+        <div class="hora">08:15h</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--azul); margin-bottom:12px; font-weight:800;">💡 Entendendo a Altimetria para Sua Estratégia</h3>
+    <p style="font-size:1.02em; color:var(--cinza-texto);">
+      Imagine correr numa esteira inteligente: no plano, o ritmo flui solto e natural. Pequenas subidas (7 a 13m de elevação) exigem ajuste fino de passada; subidas moderadas (17 a 40m) pedem que você reduza um pouco o ritmo mantendo a frequência cardíaca sob controle; e nas elevações de pico (44m), a estratégia ideal é poupar energia para acelerar forte nas descidas que vêm logo em seguida!
+    </p>
+  </div>
+</section>
+
+<!-- ALTIMETRIA -->
+<section id="altimetria">
+  <div class="section-header">
+    <h2>📈 Perfil Altimétrico Detalhado (42km)</h2>
+    <p class="section-subtitle">Análise técnica do percurso para você desenhar sua tática ideal de prova.</p>
+  </div>
+
+  <div class="card">
+    <div class="chart-container">
+      <svg id="altimetriaChart" viewBox="0 0 900 320" xmlns="http://www.w3.org/2000/svg">
+        <!-- Grid horizontal -->
+        <line x1="50" y1="40" x2="870" y2="40" stroke="#f1f5f9" stroke-width="1"/>
+        <line x1="50" y1="145" x2="870" y2="145" stroke="#f1f5f9" stroke-width="1"/>
+        <line x1="50" y1="270" x2="870" y2="270" stroke="#cbd5e1" stroke-width="1.5"/>
+
+        <!-- Grid vertical -->
+        <line x1="50" y1="40" x2="50" y2="270" stroke="#cbd5e1" stroke-width="1.5"/>
+
+        <!-- Labels Y -->
+        <text x="10" y="45" font-size="11" fill="#64748b" font-weight="700">44m</text>
+        <text x="10" y="145" font-size="11" fill="#64748b" font-weight="700">22m</text>
+        <text x="10" y="270" font-size="11" fill="#64748b" font-weight="700">0m</text>
+
+        <!-- Área sob o gráfico -->
+        <polygon fill="rgba(21, 101, 192, 0.08)"
+          points="
+          50,270
+          50,224 70,215 130,220 150,190 230,220 250,210 280,145
+          330,200 360,180 390,143 420,84 450,120 480,155 520,90
+          550,135 600,230 650,235 680,220 700,195 750,224 800,224
+          850,215 870,224
+          870,270
+          "/>
+
+        <!-- Linha da curva altimétrica -->
+        <polyline fill="none" stroke="#1565c0" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"
+          points="
+          50,224 70,215 130,220 150,190 230,220 250,210 280,145
+          330,200 360,180 390,143 420,84 450,120 480,155 520,90
+          550,135 600,230 650,235 680,220 700,195 750,224 800,224
+          850,215 870,224
+          "/>
+
+        <!-- Marcadores de pico -->
+        <circle cx="280" cy="145" r="5" fill="#c62828"/>
+        <text x="255" y="132" font-size="11" fill="#c62828" font-weight="700">32m (20-21km)</text>
+
+        <circle cx="390" cy="143" r="5" fill="#c62828"/>
+        <text x="365" y="130" font-size="11" fill="#c62828" font-weight="700">40m (24-25km)</text>
+
+        <circle cx="420" cy="84" r="6" fill="#8e1717"/>
+        <text x="390" y="70" font-size="11" fill="#8e1717" font-weight="800">PICO 44m (26-27km)</text>
+
+        <circle cx="520" cy="90" r="6" fill="#8e1717"/>
+        <text x="490" y="76" font-size="11" fill="#8e1717" font-weight="800">PICO 44m (31-32km)</text>
+
+        <circle cx="600" cy="230" r="5" fill="#2e7d32"/>
+        <text x="575" y="252" font-size="11" fill="#2e7d32" font-weight="700">Descida (32-35km)</text>
+
+        <!-- Labels Eixo X -->
+        <text x="50" y="295" font-size="11" fill="#475569" font-weight="700">0km</text>
+        <text x="230" y="295" font-size="11" fill="#475569" font-weight="700">14km</text>
+        <text x="420" y="295" font-size="11" fill="#475569" font-weight="700">21km</text>
+        <text x="600" y="295" font-size="11" fill="#475569" font-weight="700">32km</text>
+        <text x="850" y="295" font-size="11" fill="#475569" font-weight="700">42km</text>
+      </svg>
+    </div>
+
+    <div class="legenda">
+      <span><span class="dot" style="background:#1565c0;"></span> Perfil de Elevação</span>
+      <span><span class="dot" style="background:#c62828;"></span> Subidas Moderadas</span>
+      <span><span class="dot" style="background:#8e1717;"></span> Picos Principais (44m)</span>
+      <span><span class="dot" style="background:#2e7d32;"></span> Trechos de Descida / Recuperação</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="color:var(--azul); margin-bottom:14px; font-weight:800;">Seções da Prova em Detalhe</h3>
+    <div class="secoes-grid">
+      <div class="secao-card">
+        <h4>1ª Seção (0 – 14km)</h4>
+        <ul>
+          <li>0km: leve elevação inicial de 7m para aquecimento</li>
+          <li>0–6km: <span class="tag-facil">terreno plano e ritmado ao longo da orla</span></li>
+          <li>6–7km: subida moderada de 17m</li>
+          <li>7–14km: <span class="tag-facil">retorno ao plano com ótimo fluxo de passada</span></li>
+        </ul>
+      </div>
+
+      <div class="secao-card">
+        <h4>2ª Seção (14 – 28km)</h4>
+        <ul>
+          <li>14–15km: subida leve de 13m</li>
+          <li>15–20km: ondulações suaves à beira-mar</li>
+          <li>20–21km: <span class="tag-dificil">pequena elevação de 32m (atenção ao ritmo)</span></li>
+          <li>24–25km: <span class="tag-dificil">pequena subida técnica de 40m</span></li>
+          <li>26–27km: <span class="tag-dificil">1º Pico da prova — 44m</span></li>
+          <li>27–28km: descida rápida para recuperação do fôlego</li>
+        </ul>
+      </div>
+
+      <div class="secao-card">
+        <h4>3ª Seção (28 – 42km)</h4>
+        <ul>
+          <li>28–31km: ondulações intercaladas</li>
+          <li>31–32km: <span class="tag-dificil">2º Pico — 44m (momento decisivo)</span></li>
+          <li>32–35km: <span class="tag-facil">descida longa para soltar as pernas</span></li>
+          <li>35–36km: subida curta de 10m</li>
+          <li>36–41km: <span class="tag-facil">reta final plana rumo à glória</span></li>
+          <li>41–42km: subida final leve de 7m até o pórtico!</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 style="margin-bottom:12px; font-weight:800;">Resumo Estratégico</h3>
+    <div class="pontos-chave">
+      <div class="pontos-box dificeis">
+        <h4 style="color:var(--vermelho);">⚠️ Pontos de um pouco mais de  Exigência Física</h4>
+        <ul>
+          <li>20–21km (32m de elevação)</li>
+          <li>24–25km (40m de elevação)</li>
+          <li>26–27km (44m — 1º Pico)</li>
+          <li>31–32km (44m — 2º Pico)</li>
+        </ul>
+        <p style="margin-top:10px; font-size:0.9em; color:#991b1b;">💡 <strong>Dica:</strong> Nestes pontos, encurte a passada e controle os batimentos. Poupar energia aqui garante o sprint final!</p>
+      </div>
+
+      <div class="pontos-box faceis">
+        <h4 style="color:var(--verde);">✅ Melhores Trechos de Recuperação</h4>
+        <ul>
+          <li>0–6km (início plano e solto)</li>
+          <li>7–14km (ritmo cruzeiro)</li>
+          <li>Após o km 27 (descida)</li>
+          <li>Após o km 32 (descida longa)</li>
+          <li>36–41km (reta plana decisiva)</li>
+        </ul>
+        <p style="margin-top:10px; font-size:0.9em; color:#166534;">💡 <strong>Dica:</strong> Aproveite as descidas para reidratar e recuperar a cadência sem gastar energia excessiva.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIMA E TEMPERATURA -->
+<section id="clima">
+  <div class="section-header">
+    <h2>🌤️ Previsão do Clima & Temperatura em Setembro</h2>
+    <p class="section-subtitle">Setembro marca o início da primavera no Uruguai — condições ideais para maratonistas.</p>
+  </div>
+
+  <div class="card">
+    <p style="font-size:1.02em; color:var(--cinza-escuro);">
+      Punta del Este em setembro apresenta um clima fresco e agradável, perfeito para corridas de longa distância. A baixa umidade e a brisa marinha evitam o superaquecimento do corpo do atleta durante a prova.
+    </p>
+
+    <div class="weather-grid">
+      <div class="weather-day-card">
+        <div class="day-title">04/09 (Sex)</div>
+        <div class="icon">⛅</div>
+        <div class="temp">11°C / 17°C</div>
+        <div class="temp-range">Parcialmente Nublado</div>
+        <div class="desc">Vento leve · Chegada</div>
+      </div>
+
+      <div class="weather-day-card">
+        <div class="day-title">05/09 (Sáb)</div>
+        <div class="icon">🌤️</div>
+        <div class="temp">10°C / 16°C</div>
+        <div class="temp-range">Sol com Nuvens</div>
+        <div class="desc">City Tour & Descanso</div>
+      </div>
+
+      <div class="weather-day-card race-day">
+        <div class="day-title" style="color:var(--vermelho);">🏃 06/09 (Dom)</div>
+        <div class="icon">🏃‍♂️☀️</div>
+        <div class="temp">9°C / 16°C</div>
+        <div class="temp-range">Largada (08h): ~11°C</div>
+        <div class="desc" style="color:var(--vermelho); font-weight:800;">Clima Perfeito de Prova!</div>
+      </div>
+
+      <div class="weather-day-card">
+        <div class="day-title">07/09 (Seg)</div>
+        <div class="icon">🌤️</div>
+        <div class="temp">12°C / 18°C</div>
+        <div class="temp-range">Agradável e Fresco</div>
+        <div class="desc">Dia Livre de Lazer</div>
+      </div>
+
+      <div class="weather-day-card">
+        <div class="day-title">08/09 (Ter)</div>
+        <div class="icon">⛅</div>
+        <div class="temp">11°C / 17°C</div>
+        <div class="temp-range">Poucas Nuvens</div>
+        <div class="desc">Retorno a SP</div>
+      </div>
+    </div>
+
+    <div class="weather-highlight-box">
+      <h4>❄️ Recomendação de Vestuário para a Prova:</h4>
+      <p style="font-size:0.95em;">
+        Para a largada às 08h00, o clima estará em torno de 11°C. Recomendamos levar um agasalho descartável ou fácil de guardar para a concentração pré-prova. Durante a corrida, camiseta leve ou regata com manguitos é a combinação perfeita!
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MOEDA E CÂMBIO -->
+<section id="moeda">
+  <div class="section-header">
+    <h2>🔱 Moeda & Conversão de Câmbio</h2>
+    <p class="section-subtitle">Conheça a moeda local ($U - Peso Uruguaio) e calcule seus gastos facilmente.</p>
+  </div>
+
+  <div class="card">
+    <div class="currency-container">
+      <div>
+        <h3 style="color:var(--azul); margin-bottom:12px; font-weight:800;">Simulador de Câmbio Interativo</h3>
+        <p style="font-size:0.95em; color:var(--cinza-texto); margin-bottom:16px;">
+          A moeda oficial é o <strong>Peso Uruguaio ($U)</strong>. Cartões de crédito e débito internacionais são amplamente aceitos e contam com incentivo fiscal uruguaio (desconto de IVA em restaurantes para turistas!).
+        </p>
+
+        <div class="currency-rate-badge">
+          📊 Cotação Estimada de Referência: <strong>R$ 1,00 = $U 7,85 Pesos Uruguaios</strong>
+        </div>
+
+        <div class="converter-card" style="margin-top:16px;">
+          <div class="converter-form">
+            <div class="input-group">
+              <label for="brlInput">Valor em Reais (BRL - R$)</label>
+              <div class="input-wrapper">
+                <span>R$</span>
+                <input type="number" id="brlInput" value="100" placeholder="0.00" oninput="convertFromBRL()">
+              </div>
+            </div>
+
+            <div style="text-align:center; font-size:1.4em; color:var(--azul-medio);">⇅</div>
+
+            <div class="input-group">
+              <label for="uyuInput">Equivalente em Pesos Uruguaios (UYU - $U)</label>
+              <div class="input-wrapper">
+                <span>$U</span>
+                <input type="number" id="uyuInput" value="785" placeholder="0.00" oninput="convertFromUYU()">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="color:var(--azul); margin-bottom:12px; font-weight:800;">Valores Rápidos de Referência</h3>
+        <p style="font-size:0.95em; color:var(--cinza-texto); margin-bottom:12px;">
+          Tabela comparativa para rápida consulta durante a viagem:
+        </p>
+
+        <table class="quick-table">
+          <thead>
+            <tr>
+              <th>Real (BRL)</th>
+              <th>Peso Uruguaio (UYU)</th>
+              <th>Equivalência / Uso</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>R$ 10,00</strong></td>
+              <td>$U 78,50</td>
+              <td>Café expresso ou garrafa de água</td>
+            </tr>
+            <tr>
+              <td><strong>R$ 50,00</strong></td>
+              <td>$U 392,50</td>
+              <td>Lanche rápido / Isotônicos</td>
+            </tr>
+            <tr>
+              <td><strong>R$ 100,00</strong></td>
+              <td>$U 785,00</td>
+              <td>Refeição individual / Massa pré-prova</td>
+            </tr>
+            <tr>
+              <td><strong>R$ 200,00</strong></td>
+              <td>$U 1.570,00</td>
+              <td>Jantar completo em bom restaurante</td>
+            </tr>
+            <tr>
+              <td><strong>R$ 500,00</strong></td>
+              <td>$U 3.925,00</td>
+              <td>Gastos médios para o fim de semana</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUSO HORÁRIO -->
+<section id="fuso">
+  <div class="section-header">
+    <h2>⏰ Fuso Horário em Relação ao Brasil</h2>
+    <p class="section-subtitle">Vantagem estratégica total para os corredores brasileiros!</p>
+  </div>
+
+  <div class="card">
+    <div class="fuso-card">
+      <div class="fuso-icon">🧭</div>
+      <div>
+        <h3 style="color:var(--azul); font-weight:800; margin-bottom:6px;">Zero Jet Lag: Fuso Horário Idêntico!</h3>
+        <p style="color:var(--cinza-escuro); font-size:1.02em;">
+          Punta del Este está localizada no mesmo fuso horário oficial de Brasília (<strong>UTC-3</strong>).
+        </p>
+        <p style="color:var(--cinza-texto); font-size:0.95em; margin-top:6px;">
+          Isso significa que <strong>não há diferença de horário</strong> em relação a São Paulo ou Brasília. Seu relógio biológico, seus horários de sono, alimentação e descanso permanecerão 100% alinhados, garantindo o melhor rendimento muscular e fisiológico no dia da maratona!
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PREÇOS E GASTRONOMIA -->
+<section id="precos">
+  <div class="section-header">
+    <h2>🍽️ Média de Preços de Alimentos & Bebidas</h2>
+    <p class="section-subtitle">Comparativo prático de custos em Punta del Este em relação ao mercado brasileiro.</p>
+  </div>
+
+  <div class="card">
+    <p style="font-size:1.02em; color:var(--cinza-escuro); margin-bottom:16px;">
+      Punta del Este é um destino turístico internacional refinado. De forma geral, os preços em restaurantes são entre 20% a 35% superiores aos das capitais brasileiras, mas com altíssima qualidade gastronômica. <em>Dica: Restaurantes uruguaios oferecem desconto de IVA (cerca de 18% a 22%) para pagamentos com cartão de crédito internacional emitido fora do Uruguai.</em>
+    </p>
+
+    <div class="prices-table-container">
+      <table class="prices-table">
+        <thead>
+          <tr>
+            <th>Item / Refeição</th>
+            <th>Preço Médio ($U)</th>
+            <th>Em Reais (R$)</th>
+            <th>Comparação com o Brasil</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Garrafa de Água Mineral (500ml)</strong></td>
+            <td>$U 70 – $U 90</td>
+            <td>R$ 9,00 – R$ 11,50</td>
+            <td>Ligeiramente superior (Supermercado é mais barato)</td>
+          </tr>
+          <tr>
+            <td><strong>Café Expresso / Cortado</strong></td>
+            <td>$U 110 – $U 150</td>
+            <td>R$ 14,00 – R$ 19,00</td>
+            <td>Semelhante a cafés de grandes capitais (SP/RJ)</td>
+          </tr>
+          <tr>
+            <td><strong>Bebida Isotônica (Gatorade 500ml)</strong></td>
+            <td>$U 120 – $U 160</td>
+            <td>R$ 15,00 – R$ 20,00</td>
+            <td>Ligeiramente superior</td>
+          </tr>
+          <tr>
+            <td><strong>Prato de Massa (Pré-Prova / Carbo Load)</strong></td>
+            <td>$U 550 – $U 850</td>
+            <td>R$ 70,00 – R$ 108,00</td>
+            <td>Qualidade excelente de massas artesanais</td>
+          </tr>
+          <tr>
+            <td><strong>Almoço Executivo / Prato Feito</strong></td>
+            <td>$U 450 – $U 700</td>
+            <td>R$ 57,00 – R$ 89,00</td>
+            <td>Aproximadamente 25% acima de SP</td>
+          </tr>
+          <tr>
+            <td><strong>Parrillada Tradicional (para 2 pessoas)</strong></td>
+            <td>$U 1.800 – $U 2.600</td>
+            <td>R$ 229,00 – R$ 331,00</td>
+            <td>Custo-benefício excelente pelo porte dos cortes</td>
+          </tr>
+          <tr>
+            <td><strong>Cerveja Local (Patricia/Pilsen 1L)</strong></td>
+            <td>$U 220 – $U 320</td>
+            <td>R$ 28,00 – R$ 40,00</td>
+            <td>Equivalente a pubs e bares médios do Brasil</td>
+          </tr>
+          <tr>
+            <td><strong>Fatia de Empanada Uruguaia</strong></td>
+            <td>$U 110 – $U 150</td>
+            <td>R$ 14,00 – R$ 19,00</td>
+            <td>Ótima opção para lanche rápido pós-treino</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DICAS PARA O CORREDOR -->
+<section id="dicas">
+  <div class="section-header">
+    <h2>💡 Dicas de Ouro para o Maratonista</h2>
+    <p class="section-subtitle">Recomendações técnicas elaboradas para você performar no seu máximo.</p>
+  </div>
+
+  <div class="dicas-grid">
+    <div class="dica-card">
+      <h4>🔋 Gerenciamento de Energia</h4>
+      <p>As elevações principais (32m, 40m, 44m) exigem inteligência emocional. Dose o esforço nos trechos planos e use as descidas para fluir sem sobrecarregar a musculatura.</p>
+    </div>
+
+    <div class="dica-card">
+      <h4>⏱️ Controle de Cadência e Ritmo</h4>
+      <p>Não tente manter exatamente o mesmo pace nas subidas fortes. É fisiologicamente normal desacelerar alguns segundos na subida e recuperar o ritmo no trecho plano seguinte.</p>
+    </div>
+
+    <div class="dica-card">
+      <h4>💧 Hidratação & Carboidratos</h4>
+      <p>O clima fresco pode mascarar a desidratação. Siga rigorosamente seu plano de géis de carboidrato e água , desde o início da prova.</p>
+    </div>
+
+    <div class="dica-card">
+      <h4>🧥 Estratégia de Concentração</h4>
+      <p>Leve uma jaqueta corta-vento leve para o momento do aquecimento e concentração na largada às 08h00, garantindo que a musculatura permaneça aquecida.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPORTE SÃO LOURENÇO -->
+<section id="van">
+  <div class="section-header">
+    <h2>🚐 Transporte São Lourenço → Guarulhos</h2>
+    <p class="section-subtitle">Traslado rodoviário exclusivo ida e volta para o grupo de São Lourenço/MG.</p>
+  </div>
+
+  <div class="transporte-card">
+    <h3 style="color:var(--cinza-escuro); font-size:1.4em;">Embarque Garantido em Van Executiva</h3>
+    <p style="font-size:1.05em; color:var(--cinza-texto); margin-top:8px;">
+      Saída de São Lourenço no dia <strong>03/09 às 23:00 hs</strong> com destino direto ao Aeroporto Internacional de Guarulhos (GRU), com tempo hábil e seguro para o despacho de bagagens.
+    </p>
+
+    <div class="valor">R$ 470,00</div>
+    <p style="font-weight:700; color:var(--cinza-escuro); font-size:1.1em;">Valor por pessoa (Transporte completo de Ida + Volta)</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <img src="Logo_fundo_transparente.png" alt="Oficina de Turismo">
+  <p class="brand">Oficina de Turismo — Sua viagem inesquecível começa aqui!</p>
+  <p>Pacote Exclusivo Maratona de Punta del Este 2026 · 04 a 08 de Setembro</p>
+  <p style="font-size:0.85em; opacity:0.7; margin-top:12px;">© 2026 Oficina de Turismo. Todos os direitos reservados. Fotos e detalhes sujeitos a confirmação operacional.</p>
+</footer>
+
+<!-- SCRIPT DE INTERATIVIDADE -->
+<script>
+  // Cotação fixa base de referência: 1 BRL = 7.85 UYU
+  const RATE = 7.85;
+
+  function convertFromBRL() {
+    const brlVal = parseFloat(document.getElementById('brlInput').value);
+    if (!isNaN(brlVal)) {
+      document.getElementById('uyuInput').value = (brlVal * RATE).toFixed(2);
+    } else {
+      document.getElementById('uyuInput').value = '';
+    }
+  }
+
+  function convertFromUYU() {
+    const uyuVal = parseFloat(document.getElementById('uyuInput').value);
+    if (!isNaN(uyuVal)) {
+      document.getElementById('brlInput').value = (uyuVal / RATE).toFixed(2);
+    } else {
+      document.getElementById('brlInput').value = '';
+    }
+  }
+
+  // Highlight no menu de navegação ao rolar a página
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (pageYOffset >= (sectionTop - 120)) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
